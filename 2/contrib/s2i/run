@@ -243,8 +243,8 @@ delete_plugins(){
 }
 
 copy_plugins() {
-    echo "Copying $(ls /opt/openshift/plugins | wc -l) Jenkins plugins to ${JENKINS_HOME} ..."
-    cp -frL /opt/openshift/plugins/* ${JENKINS_HOME}/plugins/
+    echo "linking $(ls /opt/openshift/plugins | wc -l) Jenkins plugins to ${JENKINS_HOME} ..."
+    ln -sf /opt/openshift/plugins ${JENKINS_HOME}/plugins
 }
 
 # version.txt is maintained to check if the plugins should be copied over or not
