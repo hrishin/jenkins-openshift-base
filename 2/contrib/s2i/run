@@ -246,8 +246,8 @@ symlink_plugins() {
     echo "Symlinking $(ls /opt/openshift/plugins | wc -l) Jenkins plugins to ${JENKINS_HOME} ..."
     mkdir -p ${JENKINS_HOME}/plugins
 
-    ln -sf /opt/openshift/plugins/*.[jh]pi ${JENKINS_HOME}/plugins
-    cp -f /opt/openshift/plugins/version.txt ${JENKINS_HOME}/plugins
+    ln -sf /opt/openshift/plugins ${JENKINS_HOME}/plugins
+    ':cp -f /opt/openshift/plugins/version.txt ${JENKINS_HOME}/plugins
 
     for i in /opt/openshift/plugins/*;do
         for t in WEB META;do
@@ -258,7 +258,7 @@ symlink_plugins() {
                 ln -sf ${i}/${t}-INF ${a}/
             }
         done
-    done
+    done'
 }
 
 # We always use plugins from the image
