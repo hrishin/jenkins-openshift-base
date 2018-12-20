@@ -243,7 +243,7 @@ delete_plugins(){
 }
 
 clear_gluster_plugin() {
-    local plugins_dir = "${JENKINS_HOME}/plugins"
+    local plugins_dir="${JENKINS_HOME}/plugins"
 
     if [ ! -L "$plugins_dir" ]; then
         echo "Removing existing $plugins_dir from gluster storage"
